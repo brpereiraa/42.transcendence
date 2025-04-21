@@ -1,0 +1,6 @@
+services:
+  nginx:
+    build: frontend/.
+    container_name: nginx
+    ports:
+      - 8080:8080
