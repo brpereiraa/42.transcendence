@@ -1,5 +1,5 @@
 #Build typescript files
-FROM node:18-alpine as ts
+FROM node:18-alpine AS build
 WORKDIR /app
 
 COPY package.json tsconfig.json .
@@ -14,6 +14,6 @@ COPY src/*.css dist
 #Build nginx server
 FROM nginx:alpine
 
-COPY --from=ts /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 CMD ["nginx", "-g", "daemon off;"]
