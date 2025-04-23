@@ -4,6 +4,9 @@ services:
     container_name: nginx
     ports:
       - 8080:8080
+    networks:
+      - transcendence    
+
   prometheus:
     image: prom/prometheus
     ports:
@@ -11,7 +14,7 @@ services:
     volumes:
       - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     networks:
-      - monitoring
+      - transcendence
   grafana:
     image: grafana/grafana
     ports:
@@ -19,8 +22,16 @@ services:
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     networks:
-      - monitoring
+      - transcendence
+  nginx-exporter:
+    image: nginx/nginx-prometheus-exporter:latest
+    container_name: nginx_exporter
+    command: -nginx.scrape-uri http://nginx:8080/nginx_status
+    ports:
+      - 9113:9113
+    networks:
+      - transcendence
 
 networks:
-  monitoring:
-    external: true
+  transcendence:
+    name: transcendence
