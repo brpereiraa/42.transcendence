@@ -1,50 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./styles.css">
-    <title>Transcendence</title>
-</head>
-<body class="bg-[url('../images/background.png')] bg-cover bg-center">
-    <main class="w-full h-screen bg-zinc-950 text-white">
-        <navbar class="nav w-full flex justify-center gap-15 items-center">
-            <h2 class="text-2xl font-semibold text-right absolute left-220 top-0.5 relative after:bg-white after:absolute after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
-                Profile
-            </h2>
-        </navbar>
+    <h1 class="cyberpunk-text">TRANSCENDENCE</h1>
 
-        <div class="relative content_div justify-center items-center">
-            <div class="absolute left-8 top-1/2 transform -translate-y-1/2">
-                <button type="submit"
-                class="mr-4 w-125 h-90 font-semibold text-3xl bg-[url('../images/map1.png')] bg-cover bg-center text-white py-2 hover:opacity-60 transition duration-200 outline-double outline-gray-500 rounded-lg">
-                    MAP 1
-                </button>
-                <button type="submit"
-                class="mr-4 w-125 h-90 font-semibold text-3xl bg-[url('../images/map3.png')] bg-cover bg-center text-white py-2 hover:opacity-60 transition duration-200 outline-double outline-gray-500 rounded-lg">
-                    MAP 2
-                </button>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.cyberpunk-text {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  color: rgb(196, 66, 207);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-shadow:
+    0 0 5px rgb(157, 34, 173),
+    0 0 10px rgb(157, 34, 173),
+    0 0 20px rgb(157, 34, 173),
+    0 0 40px rgb(157, 34, 173),
+    0 0 80px rgb(157, 34, 173);
+  animation: flicker 3s infinite;
+  user-select: none;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px rgb(157, 34, 173),
+      0 0 10px rgb(157, 34, 173),
+      0 0 20px rgb(157, 34, 173),
+      0 0 40px rgb(157, 34, 173),
+      0 0 80px rgb(157, 34, 173);
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.7;
+    text-shadow: none;
+  }
+}
+</style>
+</head>
+
+<body class="relative w-full h-screen overflow-hidden text-white">
+    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <source src="images/bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="relative flex justify-center items-center w-full h-full flex-col gap-8 text-white">
+  <h1 class="cyberpunk-text">CyberPong</h1>
+  
+   <main class="w-full h-screen text-white">
+        <button id="openChat"
+            class="fixed bottom-4 right-4 bg-gray-600 text-white px-4 py-2 rounded-full shadow-lg z-50">
+            Chat
+        </button>
+        <div id="chatPanel"
+            class="fixed bottom-0 right-0 w-80 h-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-40 rounded-tl-xl">
+            <div class="flex items-center justify-between p-4 border-b">
+                <h2 class="text-lg font-semibold">Chat</h2>
+                <button id="closeChat" class="text-gray-500 hover:text-gray-800">&times;</button>
             </div>
-            <div class="absolute flex flex-col gap-4 left-[70%] top-[20%]">
+        </div>
+
+        <div class="relative flex justify-center items-center w-full h-full">
+            <div class="flex flex-col gap-8">
                 <form action="Pages/play.html" method="GET">
-                <button type="submit"
-                        class="mb-8 w-100 h-30 font-semibold text-3xl bg-gray-600 text-white py-2 hover:bg-gray-400 transition duration-200 outline-double outline-gray-500 rounded-lg">
-                  PLAY
-                </button>
+                    <button type="submit"
+                        class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg">
+                        PLAY
+                    </button>
                 </form>
-                <button type="submit"
-                        class="mb-8 w-100 h-30 font-semibold text-3xl bg-gray-600 text-white py-2 hover:bg-gray-400 transition duration-200 outline-double outline-gray-500 rounded-lg">
-                  SETTINGS
+                <button type="button"
+                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg">
+                    SETTINGS
                 </button>
-                <button type="submit"
-                        class="mb-8 w-100 h-30 font-semibold text-3xl bg-gray-600 text-white py-2 hover:bg-gray-400 transition duration-200 outline-double outline-gray-500 rounded-lg">
-                  EXIT
+                <button type="button"
+                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg ">
+                    FRIENDS
+                </button>
+                <button type="button"
+                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg ">
+                    PROFILE
+                </button>
+                <button type="button"
+                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg ">
+                    EXIT
                 </button>
             </div>
         </div>
-    </main>    
+
+        </div>
+    </main>
+</div>
+   
 
     <script src="index.js"></script>
 </body>
+
 </html>
