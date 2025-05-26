@@ -8,96 +8,115 @@
     <link rel="stylesheet" href="./styles.css">
     <h1 class="cyberpunk-text">TRANSCENDENCE</h1>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-.cyberpunk-text {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 4rem;
-  color: rgb(196, 66, 207);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  text-shadow:
-    0 0 5px rgb(157, 34, 173),
-    0 0 10px rgb(157, 34, 173),
-    0 0 20px rgb(157, 34, 173),
-    0 0 40px rgb(157, 34, 173),
-    0 0 80px rgb(157, 34, 173);
-  animation: flicker 3s infinite;
-  user-select: none;
-}
+        .cyberpunk-text {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 4rem;
+            color: rgb(196, 66, 207);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            text-shadow:
+                0 0 5px rgb(157, 34, 173),
+                0 0 10px rgb(157, 34, 173),
+                0 0 20px rgb(157, 34, 173),
+                0 0 40px rgb(157, 34, 173),
+                0 0 80px rgb(157, 34, 173);
+            animation: flicker 3s infinite;
+            user-select: none;
+        }
 
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-    text-shadow:
-      0 0 5px rgb(157, 34, 173),
-      0 0 10px rgb(157, 34, 173),
-      0 0 20px rgb(157, 34, 173),
-      0 0 40px rgb(157, 34, 173),
-      0 0 80px rgb(157, 34, 173);
-  }
-  20%, 22%, 24%, 55% {
-    opacity: 0.7;
-    text-shadow: none;
-  }
-}
-</style>
+        @keyframes flicker {
+
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                opacity: 1;
+                text-shadow:
+                    0 0 5px rgb(157, 34, 173),
+                    0 0 10px rgb(157, 34, 173),
+                    0 0 20px rgb(157, 34, 173),
+                    0 0 40px rgb(157, 34, 173),
+                    0 0 80px rgb(157, 34, 173);
+            }
+
+            20%,
+            22%,
+            24%,
+            55% {
+                opacity: 0.7;
+                text-shadow: none;
+            }
+        }
+    </style>
 </head>
-
 <body class="relative w-full h-screen overflow-hidden text-white">
     <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
         <source src="images/bg.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="relative flex justify-center items-center w-full h-full flex-col gap-8 text-white">
-  <h1 class="cyberpunk-text">CyberPong</h1>
-  
-   <main class="w-full h-screen text-white">
-        <button id="openChat"
-            class="fixed bottom-4 right-4 bg-gray-600 text-white px-4 py-2 rounded-full shadow-lg z-50">
-            Chat
-        </button>
-        <div id="chatPanel"
-            class="fixed bottom-0 right-0 w-80 h-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-40 rounded-tl-xl">
-            <div class="flex items-center justify-between p-4 border-b">
-                <h2 class="text-lg font-semibold">Chat</h2>
-                <button id="closeChat" class="text-gray-500 hover:text-gray-800">&times;</button>
-            </div>
-        </div>
+    <div class="relative flex justify-center items-center w-full h-full flex-col gap-8 text-white ">
+        <h1 class="cyberpunk-text">CyberPong</h1>
 
-        <div class="relative flex justify-center items-center w-full h-full">
-            <div class="flex flex-col gap-8">
-                <form action="Pages/play.html" method="GET">
-                    <button type="submit"
-                        class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg">
-                        PLAY
-                    </button>
-                </form>
-                <button type="button"
-                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg">
-                    SETTINGS
-                </button>
-                <button type="button"
-                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg ">
+        <main class="w-full h-screen text-white">
+            <button id="openChat"
+                class="fixed bottom-4 right-4 bg-gray-600 text-white px-4 py-2 rounded-full shadow-lg z-50">
+                Chat
+            </button>
+            <div id="chatPanel"
+                class="fixed bottom-0 right-0 w-80 h-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-40 rounded-tl-xl">
+                <div class="flex items-center justify-between p-4 border-b">
+                    <h2 class="text-lg font-semibold">Chat</h2>
+                    <button id="closeChat" class="text-gray-500 hover:text-gray-800">&times;</button>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center items-center w-full h-full">
+                <div class="flex flex-col gap-8">
+                    <form action="Pages/play.html" method="GET">
+                        <button type="submit"
+                            class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
+                            PLAY
+                        </button>
+                    </form>
+                    <button type="button"
+                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
                     FRIENDS
                 </button>
-                <button type="button"
-                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg ">
+                <form action="Pages/profile.html" method="GET">
+                    <button type="submit"
+                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
                     PROFILE
                 </button>
-                <button type="button"
-                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg ">
-                    EXIT
-                </button>
+            </form>
+            <button type="button"
+                class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
+                LEADERBOARD
+            </button>
+            <button type="button"
+                class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
+                SETTINGS
+            </button>
+            <form action="Pages/login.html" method="GET">
+                <button type="submit"
+                class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
+                EXIT
+            </button>
+        </form>
+                </div>
             </div>
-        </div>
 
-        </div>
+    </div>
     </main>
-</div>
-   
+    </div>
+
 
     <script src="index.js"></script>
 </body>

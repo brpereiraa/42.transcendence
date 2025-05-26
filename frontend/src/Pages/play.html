@@ -8,20 +8,15 @@
   <link rel="stylesheet" href="../styles.css" />
   <title>Transcendence</title>
 </head>
-
 <body class="relative w-full h-screen text-white">
-  <video autoplay muted loop playsinline
-    class="absolute top-0 left-0 w-full h-full object-cover z-0">
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
     <source src="../images/bg.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
-
-  <main class="relative z-10 w-full h-screen bg-zinc-950/60">
-    <button id="openChat"
-      class="fixed bottom-4 right-4 bg-gray-600 text-white px-4 py-2 rounded-full shadow-lg z-50">
+  <main class="relative z-10 w-full h-screen">
+    <button id="openChat" class="fixed bottom-4 right-4 bg-gray-600 text-white px-4 py-2 rounded-full shadow-lg z-50">
       Chat
     </button>
-
     <div id="chatPanel"
       class="fixed bottom-0 right-0 w-80 h-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-40 rounded-tl-xl">
       <div class="flex items-center justify-between p-4 border-b">
@@ -29,22 +24,28 @@
         <button id="closeChat" class="text-gray-500 hover:text-gray-800">&times;</button>
       </div>
     </div>
-
     <div class="content_div flex gap-25 justify-center items-center mt-10">
       <button type="submit"
-        class="w-125 h-90 font-semibold text-3xl bg-[url('../images/1vs1.jpg')] bg-cover bg-center text-white py-2 hover:opacity-60 transition duration-200 outline-double outline-purple-500 rounded-lg">
+        class="w-90 h-70 font-semibold text-3xl bg-[url('../images/1vs1.jpg')] bg-cover bg-center text-white py-2 hover:opacity-60 transition duration-200 outline-double outline-purple-500 rounded-lg">
       </button>
       <button type="submit"
-        class="w-125 h-90 font-semibold text-3xl bg-[url('../images/tournament.jpg')] bg-cover bg-center text-white py-2 hover:opacity-60 transition duration-200 outline-double outline-purple-500 rounded-lg">
+        class="w-90 h-70 font-semibold text-3xl bg-[url('../images/tournament.jpg')] bg-cover bg-center text-white py-2 hover:opacity-60 transition duration-200 outline-double outline-purple-500 rounded-lg">
       </button>
       <button type="submit"
-        class="w-125 h-90 font-semibold text-3xl bg-[url('../images/map3.png')] bg-cover bg-center text-white py-2 hover:opacity-60 transition duration-200 outline-double outline-purple-500 rounded-lg">
+        class="w-90 h-70 font-semibold text-3xl bg-[url('../images/map3.png')] bg-cover bg-center text-white py-2 hover:opacity-60 transition duration-200 outline-double outline-purple-500 rounded-lg">
         CPU
       </button>
     </div>
+    <div class="absolute top-[70%] left-1/2 transform -translate-x-1/2">
+      <form action="../index.html" method="GET">
+        <button type="submit"
+          class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg">
+          Back ↩
+        </button>
+      </form>      
+    </div>    
+    </div>
   </main>
-
   <script src="index.js"></script>
 </body>
-
 </html>
