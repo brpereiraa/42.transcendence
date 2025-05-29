@@ -11,6 +11,14 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
+        .text-outline {
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
         .cyberpunk-text {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
@@ -57,6 +65,7 @@
         }
     </style>
 </head>
+
 <body class="relative w-full h-screen overflow-hidden text-white">
     <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
         <source src="images/bg.mp4" type="video/mp4">
@@ -64,7 +73,6 @@
     </video>
     <div class="relative flex justify-center items-center w-full h-full flex-col gap-8 text-white ">
         <h1 class="cyberpunk-text">CyberPong</h1>
-
         <main class="w-full h-screen text-white">
             <button id="openChat"
                 class="fixed bottom-4 right-4 bg-gray-600 text-white px-4 py-2 rounded-full shadow-lg z-50">
@@ -82,34 +90,32 @@
                 <div class="flex flex-col gap-8">
                     <form action="Pages/play.html" method="GET">
                         <button type="submit"
-                            class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
+                            class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80 text-outline">
                             PLAY
                         </button>
                     </form>
                     <button type="button"
-                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
-                    FRIENDS
-                </button>
-                <form action="Pages/profile.html" method="GET">
+                        class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80 text-outline">
+                        FRIENDS
+                    </button>
+                    <form action="Pages/profile.html" method="GET">
+                        <button type="submit"
+                            class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80 text-outline">
+                            PROFILE
+                        </button>
+                    </form>
+                    <form action="Pages/leaderboard.html" method="GET">
                     <button type="submit"
-                    class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
-                    PROFILE
-                </button>
-            </form>
-            <button type="button"
-                class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
-                LEADERBOARD
-            </button>
-            <button type="button"
-                class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
-                SETTINGS
-            </button>
-            <form action="Pages/login.html" method="GET">
-                <button type="submit"
-                class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80">
-                EXIT
-            </button>
-        </form>
+                        class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80 text-outline">
+                        LEADERBOARD
+                    </button>
+                    </form>
+                    <form action="Pages/login.html" method="GET">
+                        <button type="submit"
+                            class="w-60 h-14 font-semibold text-3xl bg-purple-600 text-white py-2 hover:bg-purple-400 transition duration-200 outline-double outline-gray-500 rounded-lg opacity-80 text-outline">
+                            EXIT
+                        </button>
+                    </form>
                 </div>
             </div>
 
