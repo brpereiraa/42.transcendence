@@ -72,23 +72,6 @@
         </div>        
         </div>
     </main>
-    <script src="index.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const timerElement = document.getElementById('timer');
-          let seconds = 0;
-      
-          function formatTime(sec) {
-            const m = String(Math.floor(sec / 60)).padStart(2, '0');
-            const s = String(sec % 60).padStart(2, '0');
-            return `${m}:${s}`;
-          }
-      
-          setInterval(() => {
-            seconds++;
-            timerElement.textContent = ` ${formatTime(seconds)}`;
-          }, 1000);
-        });
-      </script>
+    <script src="script.js"></script>
 </body>
 </html>
