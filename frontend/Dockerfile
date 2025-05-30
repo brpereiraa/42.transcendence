@@ -7,13 +7,16 @@ COPY . .
 
 RUN npm i 
 
-RUN npx tsc
-COPY src/*.html dist
-COPY src/*.css dist
+CMD ["npm", "run", "dev"]
 
-#Build nginx server
-FROM nginx:alpine
+# RUN npx tsc
+# COPY src/*.html dist
+# COPY src/*.css dist
+# COPY src/*.js dist
 
-COPY --from=build /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
-CMD ["nginx", "-g", "daemon off;"]
+# #Build nginx server
+# FROM nginx:alpine
+
+# COPY --from=build /app/dist /usr/share/nginx/html
+# COPY nginx.conf /etc/nginx/nginx.conf
+# CMD ["nginx", "-g", "daemon off;"]

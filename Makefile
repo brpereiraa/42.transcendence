@@ -1,3 +1,6 @@
+build:
+	docker compose up nginx backend --build
+
 front:
 	@echo "Building TypeScript and copying static files..."
 	cd frontend && npm i && npx tsc
@@ -6,8 +9,5 @@ front:
 	cp frontend/src/*.css frontend/dist/
 	@echo "Starting Live Server..."
 	cd frontend/ && npm run dev
-
-build:
-	docker compose up --build
-
+ 
 .SILENT: 

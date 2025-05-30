@@ -8,4 +8,4 @@ fastify.get("/", async (req, res) => {
     res.send({message: "Hello world"})
 })
 
-fastify.listen({ port: 3000 })
+fastify.listen({ port: 3000, host:"0.0.0.0" })
