@@ -1,20 +1,25 @@
 services:
-  nginx:
+  frontend:
     build: frontend/.
-    container_name: nginx
+    container_name: frontend
     ports:
       - 8080:8080
     networks:
-      - transcendence    
+      - transcendence
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    
   backend:
     build: backend/.
     container_name: backend
     ports:
-      - "3000:3000"
+      - "3001:3001"
     networks:
       - transcendence
-
-
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
 
   #Devops
   elasticsearch:

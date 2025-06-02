@@ -1,5 +1,5 @@
 build:
-	docker compose up nginx backend --build
+	docker compose up frontend backend --build
 
 front:
 	@echo "Building TypeScript and copying static files..."
