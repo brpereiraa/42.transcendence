@@ -1,12 +1,13 @@
-import Database from "better-sqlite3"
 import "./routes/api.js"
+import Fastify from "fastify"
+import DB from "./database/db.js"
+import routes from "./routes/api.js"
 
-const db = new Database("database/pong.db")
+const fastify = Fastify({
+    logger: true,
+})
 
-db.exec(`
-    CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL
-    )
-`)
+fastify.decorate("db", new DB())
+fastify.register(routes, {prefix: "/api"})
 
+fastify.listen({ port: 3001, host:"0.0.0.0" })
