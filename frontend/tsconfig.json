@@ -2,14 +2,14 @@
   "compilerOptions": {
     "target": "es2017",
     "lib": ["es2017", "dom"],
-    "outDir": "src/pages",
-    "rootDir": "src/pages",
+    "outDir": "src",
+    "rootDir": "src",
     "noEmitOnError": true,
     "strict": true,
     "module": "ESNext",
     "moduleResolution": "node",
     "esModuleInterop": true
   },
-  "include": ["src/pages/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }
