@@ -1,3 +1,24 @@
+import play from "../pages/play.js"
+import local from "../pages/local.js";
+import multiplayer from "../pages/multiplayer.js"
+import register from "../pages/register.js";
+
+const handleLocation = async () => {
+  const path = window.location.pathname;
+  const route = routes[path] || routes[404];
+
+  let html = "";
+
+  if (typeof route === "function") {
+    html = route();
+  } else if (typeof route === "string") {
+    html = await fetch(route).then(res => res.text());
+  }
+
+  document.getElementById("main-page").innerHTML = html;
+  attachProfilePicListener();
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", (event) => {
         const link = event.target.closest("a");
@@ -47,27 +68,20 @@ function attachProfilePicListener() {
 
 const routes = {
     "/" : "/index.html",
-    "/play": "/pages/play.html",
+    "/play": play,
     "/profile": "/pages/profile.html",
     "/leaderboard": "/pages/leaderboard.html",
     "/login": "/pages/login.html",
     "/index": "../index.html",
-    "/local": "/pages/local.html",
+    "/local": local,
     "/1vs1local": "/pages/1vs1local.html",
-    "/multiplayer": "/pages/multiplayer.html",
+    "/multiplayer": multiplayer,
     "/1vs1": "/pages/1vs1.html",
-    "/register": "/pages/register.html",
+    "/register": register,
     "/friends": "/pages/friends.html",
 };
 
-const handleLocation = async () => {
-    const path = window.location.pathname;
-    const route = routes[path] || routes[404];
-    const html = await fetch(route).then(res => res.text());
-    document.getElementById("main-page").innerHTML = html;
-  
-    attachProfilePicListener();
-  };
+
 window.onpopstate = handleLocation;
 
 handleLocation(); // Initial call to load the content based on the current path

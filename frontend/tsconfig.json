@@ -2,13 +2,12 @@
   "compilerOptions": {
     "target": "es2017",
     "lib": ["es2017", "dom"],
-    "outDir": "src",
-    "rootDir": "src",
-    "noEmitOnError": true,
-    "strict": true,
     "module": "ESNext",
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "strict": true,
+    "esModuleInterop": true,
+    "noEmitOnError": false,
+    "allowJs": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

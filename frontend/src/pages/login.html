@@ -1,64 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    .text-outline {
-      text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-    }
-  </style>
-</head>
-
-<body class="relative w-full h-screen overflow-hidden text-white">
-
-  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-    <source src="../images/bg.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="relative z-10 w-full h-full flex items-center justify-center">
-    <div class="w-full max-w-md bg-black/30 rounded-2xl shadow-lg p-8 space-y-1">
-      <h2 class="text-3xl font-bold text-purple-600 text-center text-outline">Login</h2>
-      <form action="/login" method="POST" class="space-y-5">
-        <div>
-          <label for="email" class="block text-sm font-bold text-purple-600 text-outline">Email</label>
-          <input type="email" id="email" name="email" required
-            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-white-900 bg-black/20" />
-        </div>
-        <div>
-          <label for="password" class="block text-sm font-bold text-purple-600 text-outline">Password</label>
-          <input type="password" id="password" name="password" required
-            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-white-900 bg-black/20" />
-        </div>
-        <!-- <div class="flex items-center justify-between">
-          <a href="/forgot-password" class="text-sm text-purple-600 hover:underline font-bold text-outline">Forgot
-            password?</a>
-        </div> -->
-        <button type="submit"
-          class="w-full bg-purple-900 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200">
-          Login
-        </button>
-      </form>
-      <div class="flex gap-2 mt-2">
-          <button type="submit"
-            onclick="route()"
-            class="w-full bg-gray-400 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition duration-200 text-center">
-            Login as Guest
-          </button>
-          <button 
-            class="w-full bg-gray-400 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition duration-200 text-center"
-            onclick="route()">
-            Register
-          </button>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+  <div class="w-full max-w-md bg-black/30 rounded-2xl shadow-lg p-8 space-y-1">
+    <h2 class="text-3xl font-bold text-purple-600 text-center text-outline">Login</h2>
+    <form action="/login" method="POST" class="space-y-5">
+      <div>
+        <label for="email" class="block text-sm font-bold text-purple-600 text-outline">Email</label>
+        <input type="email" id="email" name="email"
+          class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-white-900 bg-black/20" />
       </div>
-  </div>
-</body>
-</html>
+      <div>
+        <label for="password" class="block text-sm font-bold text-purple-600 text-outline">Password</label>
+        <input type="password" id="password" name="password"
+          class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-white-900 bg-black/20" />
+      </div>
+      <button
+        class="w-full bg-purple-900 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200">
+        Login
+      </button>
+    </form>
+    <div class="flex gap-2 mt-2">
+      <a href="/" onclick="route()" class="w-full bg-gray-400 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition duration-200 text-center">
+        Login as Guest
+      </a>
+      <a href="/register" onclick="route()" class="w-full bg-gray-400 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition duration-200 text-center">
+        Register
+      </a>
+    </div>
+</div>
