@@ -15,6 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
 const routes = {
     "/" : "/index.html",
     "/play": "/pages/play.html",
+    "/profile": "/pages/profile.html",
+    "/leaderboard": "/pages/leaderboard.html",
+    "/login": "/pages/login.html",
+    "/index": "../index.html",
+    "/local": "/pages/local.html",
+    "/1vs1local": "/pages/1vs1local.html",
+    "/multiplayer": "/pages/multiplayer.html",
+    "/1vs1": "/pages/1vs1.html",
+    "/register": "/pages/register.html",
 };
 
 const handleLocation = async () => {
