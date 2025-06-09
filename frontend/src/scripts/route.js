@@ -2,6 +2,10 @@ import play from "../pages/play.js"
 import local from "../pages/local.js";
 import multiplayer from "../pages/multiplayer.js"
 import register from "../pages/register.js";
+import game from "../pages/game.js"
+import teste from "../pages/teste.js"
+import page404 from "../pages/page404.js"
+import testing from "../pages/testing.js"
 
 const handleLocation = async () => {
   const path = window.location.pathname;
@@ -79,6 +83,10 @@ const routes = {
     "/1vs1": "/pages/1vs1.html",
     "/register": register,
     "/friends": "/pages/friends.html",
+    "/game": game,
+    "/teste": teste,
+    "/testing": testing,
+    "404": page404
 };
 
 

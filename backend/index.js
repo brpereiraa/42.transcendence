@@ -1,10 +1,15 @@
 import "./routes/api.js"
 import Fastify from "fastify"
+import cors from "@fastify/cors"
 import DB from "./database/db.js"
 import routes from "./routes/api.js"
 
 const fastify = Fastify({
     logger: true,
+})
+
+await fastify.register(cors, {
+    origin: true,
 })
 
 fastify.decorate("db", new DB())

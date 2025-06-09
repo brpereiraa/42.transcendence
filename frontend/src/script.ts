@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
   });
   
-  async function createUser(name, password) {
+  async function createUser(name: string, password: string) {
     try {
       const response = await fetch('http://localhost:3001/api/user', {
         method: 'POST',

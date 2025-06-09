@@ -4,12 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./styles.css">
     <title>Transcendence</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+        main {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
 
         .text-outline {
             text-shadow:
@@ -71,7 +76,7 @@
         <source src="images/bg.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <main class="relative flex justify-center items-center w-full h-full flex-col gap-8 text-white " id="main-page">
+    <main class="relative flex justify-center items-center w-full h-full flex-col gap-8 text-white" id="main-page">
         <h1 class="cyberpunk-text">CyberPong</h1>
         <div class="w-full h-screen text-white">
             <button id="openChat"

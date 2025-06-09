@@ -12,7 +12,6 @@ class DB {
         this.db.exec(data)
     }
 
-
     fetchUsers(){
         const stmt = this.db.prepare("SELECT * FROM users")
 
@@ -20,7 +19,6 @@ class DB {
 
         return users
     }
-
 
     createUser(user){
         const stmt = this.db.prepare("INSERT INTO users (name, password) VALUES (?, ?)")
