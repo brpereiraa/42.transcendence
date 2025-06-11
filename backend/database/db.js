@@ -20,6 +20,12 @@ class DB {
         return users
     }
 
+    fetchUser(nickname){
+        const stmt = this.db.prepare("SELECT * FROM users WHERE nickname = ?")
+        const status = stmt.get(nickname)
+        return status
+    }
+
     createUser(user){
         const stmt = this.db.prepare("INSERT INTO users (name, password) VALUES (?, ?)")
         const status = stmt.run(user.name, user.password)

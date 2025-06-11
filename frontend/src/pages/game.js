@@ -22,12 +22,12 @@ const game = () => {
             <div class="flex max-w-1000">
                 <div class="mx-auto mt-20">
                     <img src="./images/bentley.png" class="w-40 h-40 rounded-xl object-cover"/>
-                    <h1 class="text-center mt-4" id="player1"></h1>
+                    <h1 class="text-center mt-4" id="player1">...</h1>
                 </div>
                 <canvas id="pong" width="900" height="500" class="mx-auto border-solid border-4 border-b-teal-500 border-r-teal-500" style="background-color:rgba(255,255,255,0.9)"> </canvas>
                 <div class="mx-auto mt-20">
                     <img src="./images/murry.png" class="w-40 h-40 rounded-xl object-cover"/>
-                    <h1 class="text-center mt-4" id="player2"> User 1 </h1>
+                    <h1 class="text-center mt-4" id="player2">...</h1>
                 </div>
             </div>
         </div>

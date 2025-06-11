@@ -1,3 +1,17 @@
+const socket = new WebSocket("ws://localhost:3002");
+socket.addEventListener("open", () => {
+    console.log("Connected to WebSocket server");
+    socket.send("Hello from client");
+});
+socket.addEventListener("message", (event) => {
+    console.log("Message from server:", event.data);
+});
+socket.addEventListener("close", () => {
+    console.log("Connection closed");
+});
+socket.addEventListener("error", (err) => {
+    console.error("WebSocket error", err);
+});
 let ball = {
     color: "white",
     x: 450,
