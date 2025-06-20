@@ -6,6 +6,8 @@ import game from "../pages/game.js"
 import teste from "../pages/teste.js"
 import page404 from "../pages/page404.js"
 import testing from "../pages/testing.js"
+import oneonone from "../pages/1vs1.js"
+import oneononelocal from "../pages/1vs1local.js"
 
 const handleLocation = async () => {
   const path = window.location.pathname;
